@@ -84,23 +84,30 @@ struct BarsView: View {
 
     var body: some View {
         TimelineView(.animation) { ctx in
-            let now = ctx.date
-            let idle = settings.visualizer == .always
-            let lvl = max(model.currentLevel(at: now), idle ? 0.12 : 0)
-            let color = settings.tintBars ? SoundBank.option(settings.soundID).color : .white
-            HStack(spacing: 3) {
-                ForEach(0..<5, id: \.self) { i in
-                    let t = now.timeIntervalSinceReferenceDate
-                    let wave = 0.5 + 0.5 * sin(t * (7 + Double(i) * 1.7) + Double(i) * 1.3)
-                    Capsule()
-                        .fill(LinearGradient(colors: [color, color.opacity(0.55)], startPoint: .top, endPoint: .bottom))
-                        .frame(width: 3, height: 3 + 13 * lvl * (0.35 + 0.65 * wave))
-                }
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .opacity(model.visible ? 1 : 0)
-            .scaleEffect(model.visible ? 1 : 0.6)
-            .animation(.spring(response: 0.35, dampingFraction: 0.8), value: model.visible)
+            bars(at: ctx.date)
         }
+    }
+
+    private func bars(at now: Date) -> some View {
+        let idle = settings.visualizer == .always
+        let level = max(model.currentLevel(at: now), idle ? 0.12 : 0)
+        let color: Color = settings.tintBars ? SoundBank.option(settings.soundID).color : .white
+        let t = now.timeIntervalSinceReferenceDate
+        return HStack(spacing: 3) {
+            ForEach(0..<5, id: \.self) { i in
+                bar(i, t: t, level: level, color: color)
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .opacity(model.visible ? 1 : 0)
+        .scaleEffect(model.visible ? 1 : 0.6)
+        .animation(.spring(response: 0.35, dampingFraction: 0.8), value: model.visible)
+    }
+
+    private func bar(_ i: Int, t: Double, level: Double, color: Color) -> some View {
+        let wave = 0.5 + 0.5 * sin(t * (7 + Double(i) * 1.7) + Double(i) * 1.3)
+        let height = CGFloat(3 + 13 * level * (0.35 + 0.65 * wave))
+        let fill = LinearGradient(colors: [color, color.opacity(0.55)], startPoint: .top, endPoint: .bottom)
+        return Capsule().fill(fill).frame(width: 3, height: height)
     }
 }
