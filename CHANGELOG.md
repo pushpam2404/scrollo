@@ -4,6 +4,11 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-11-01
+
+### Removed
+- The notch equalizer and its settings. Scrollo is now sounds and haptics only.
+
 ## [1.0.0] - 2026-11-01
 
 ### Added
@@ -21,5 +26,6 @@ All notable changes to this project are documented here. The format follows [Kee
 - Browsers and web-based apps do not report their scroll position, so Scrollo stays silent there by default.
 - Releases are signed with a self-made certificate and are not notarized.
 
-[Unreleased]: https://github.com/pushpam2404/scrollo/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/pushpam2404/scrollo/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/pushpam2404/scrollo/releases/tag/v1.0.1
 [1.0.0]: https://github.com/pushpam2404/scrollo/releases/tag/v1.0.0
