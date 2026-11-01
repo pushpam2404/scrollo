@@ -32,3 +32,6 @@ ref/
 # Claude Code / local tooling
 .claude/
 .codegraph/
+
+# Local project memory for Claude (never published)
+CLAUDE.md
