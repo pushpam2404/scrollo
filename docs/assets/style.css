@@ -1,0 +1,15 @@
+:root { --mint:#78e8be; --mint2:#bfffe8; --ink:#f3f7f5; --mute:#a9b9b3; --bg1:#0f1413; --bg2:#070a09; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: transparent; font-family: -apple-system, "SF Pro Display", "Helvetica Neue", Arial, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+.stage { position: relative; overflow: hidden; background:
+  radial-gradient(1100px 700px at 80% 38%, rgba(120,232,190,.20), transparent 62%),
+  radial-gradient(800px 560px at 6% 112%, rgba(60,150,125,.26), transparent 60%),
+  linear-gradient(180deg, var(--bg1), var(--bg2)); }
+.grid { position:absolute; inset:0; opacity:.5;
+  background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 56px 56px; -webkit-mask-image: radial-gradient(900px 600px at 70% 45%, #000, transparent 75%); }
+.shadow { filter: drop-shadow(0 40px 60px rgba(0,0,0,.55)) drop-shadow(0 8px 18px rgba(0,0,0,.4)); }
+.grad { background: linear-gradient(180deg,#ffffff 20%, var(--mint2) 70%, var(--mint)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.chip { display:inline-flex; align-items:center; gap:10px; padding:10px 18px; border-radius:999px; font-size:20px; color:#d6e3de;
+  background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); backdrop-filter: blur(8px); }
+.dot { width:9px; height:9px; border-radius:50%; background:var(--mint); box-shadow:0 0 12px var(--mint); }

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="t d">
+  <title id="t">How Scrollo decides when to click</title>
+  <desc id="d">Scroll events are read by a listen-only event tap. A scroll probe asks the app under the pointer for its scroll position through Accessibility. If the content is moving, the audio engine, haptics and visualizer fire; at an edge or in a non-scrolling area they stay silent.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101716"/><stop offset="1" stop-color="#080b0a"/></linearGradient>
+    <linearGradient id="box" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c2624"/><stop offset="1" stop-color="#121a18"/></linearGradient>
+    <linearGradient id="hot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a4a40"/><stop offset="1" stop-color="#173028"/></linearGradient>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#78e8be"/></marker>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <style>
+      text { font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; fill: #eaf2ef; }
+      .h { font-size: 22px; font-weight: 650; } .s { font-size: 15px; fill: #a9b9b3; } .tag { font-size: 13px; fill: #78e8be; letter-spacing: 1.2px; font-weight: 600; }
+      .b { fill: url(#box); stroke: #2c3a37; stroke-width: 1.5; } .hot { fill: url(#hot); stroke: #78e8be; stroke-width: 1.5; }
+      .l { stroke: #78e8be; stroke-width: 2; fill: none; marker-end: url(#ar); opacity: .9; } .dim { stroke: #4b5b57; stroke-dasharray: 5 5; }
+    </style>
+  </defs>
+  <rect width="1200" height="520" rx="26" fill="url(#bg)"/>
+  <text x="48" y="58" class="tag">HOW IT WORKS</text>
+  <text x="48" y="92" class="h" style="font-size:30px">From a scroll gesture to a click, only when the page really moves</text>
+
+  <rect class="b" x="48" y="170" width="200" height="110" rx="16"/>
+  <text x="148" y="212" class="h" text-anchor="middle">Your scroll</text><text x="148" y="240" class="s" text-anchor="middle">trackpad or wheel</text><text x="148" y="262" class="s" text-anchor="middle">natural or classic</text>
+
+  <rect class="b" x="304" y="170" width="220" height="110" rx="16"/>
+  <text x="414" y="212" class="h" text-anchor="middle">Event tap</text><text x="414" y="240" class="s" text-anchor="middle">listen-only, reads deltas</text><text x="414" y="262" class="s" text-anchor="middle">one click per N points</text>
+
+  <rect class="hot" x="580" y="150" width="270" height="150" rx="16" filter="url(#glow)"/>
+  <text x="715" y="192" class="h" text-anchor="middle">Scroll probe</text>
+  <text x="715" y="220" class="s" text-anchor="middle">which app is under the pointer?</text>
+  <text x="715" y="242" class="s" text-anchor="middle">where is its scroll position?</text>
+  <text x="715" y="264" class="s" text-anchor="middle">is it changing? is it at an edge?</text>
+  <text x="715" y="286" class="tag" text-anchor="middle">ACCESSIBILITY API</text>
+
+  <rect class="b" x="906" y="130" width="246" height="86" rx="16"/>
+  <text x="1029" y="168" class="h" text-anchor="middle">Click</text><text x="1029" y="194" class="s" text-anchor="middle">sound + haptic + equalizer</text>
+  <rect class="b" x="906" y="236" width="246" height="86" rx="16" style="opacity:.8"/>
+  <text x="1029" y="274" class="h" text-anchor="middle">Silence</text><text x="1029" y="300" class="s" text-anchor="middle">edge, rubber-band, nothing to scroll</text>
+
+  <path class="l" d="M248 225 H304"/><path class="l" d="M524 225 H580"/>
+  <path class="l" d="M850 205 C880 205 880 173 906 173"/><path class="l dim" d="M850 245 C880 245 880 279 906 279"/>
+
+  <rect class="b" x="304" y="372" width="548" height="100" rx="16"/>
+  <text x="578" y="408" class="h" text-anchor="middle">It learns each app, nothing is hard-coded</text>
+  <text x="578" y="434" class="s" text-anchor="middle">scroll direction vs. position (natural scrolling), dummy scroll bars,</text>
+  <text x="578" y="456" class="s" text-anchor="middle">apps that never report a position (they stay silent by default)</text>
+  <path class="l dim" d="M715 300 V372" style="marker-end:none"/>
+</svg>

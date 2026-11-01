@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css">
+<style>
+ .stage { width:1200px; height:360px; background: linear-gradient(135deg,#1b2a3a,#2a1f3d 55%,#12303a); }
+ .bar { position:absolute; left:0; right:0; top:0; height:74px; background: rgba(10,12,14,.55); backdrop-filter: blur(20px); display:flex; align-items:center; padding:0 28px; font-size:23px; color:#e8eeec; gap:30px; }
+ .notch { position:absolute; left:50%; top:0; width:260px; height:74px; margin-left:-130px; background:#000; border-radius:0 0 26px 26px; }
+ .eq { position:absolute; left:calc(50% + 150px); top:0; height:74px; display:flex; align-items:center; gap:6px; }
+ .eq i { display:block; width:7px; border-radius:4px; background: linear-gradient(180deg,#bfffe8,#4fd0a0); box-shadow:0 0 14px rgba(120,232,190,.6); }
+ .cap { position:absolute; left:0; right:0; top:150px; text-align:center; }
+ .cap b { display:block; font-size:44px; letter-spacing:-1px; margin-bottom:10px; }
+ .cap span { font-size:24px; color:#c3d1cc; }
+</style></head><body>
+<div class="stage">
+  <div class="bar"><span style="font-weight:700"></span><span style="font-weight:700">Finder</span><span>File</span><span>Edit</span><span>View</span></div>
+  <div class="notch"></div>
+  <div class="eq"><i style="height:14px"></i><i style="height:34px"></i><i style="height:52px"></i><i style="height:26px"></i><i style="height:40px"></i></div>
+  <div class="cap"><b class="grad">A liquid equalizer beside the notch</b><span>It rises while you scroll and tucks away when you stop. Tint it with your sound's color, or keep it white.</span></div>
+</div></body></html>
