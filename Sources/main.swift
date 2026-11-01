@@ -25,7 +25,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             .sink { [weak self] on in self?.item.button?.alphaValue = on ? 1 : 0.4 }.store(in: &bag)
 
         AudioPlayer.shared.start()
-        Visualizer.shared.start()
         if UserDefaults.standard.bool(forKey: "debugProbe") { Diagnostics.start() }   // developer tool, off by default
         let monitor = ScrollMonitor.shared
         if !monitor.trusted { monitor.promptForAccess() }

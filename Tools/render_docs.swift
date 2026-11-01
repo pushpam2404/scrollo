@@ -13,7 +13,7 @@ app.setActivationPolicy(.regular)
 // Representative settings for the screenshots (this tool has its own preferences domain, so nothing real is touched).
 let s = Settings.shared
 s.enabled = true; s.volume = 0.65; s.soundID = "softpop"; s.spacing = 140
-s.haptics = true; s.hapticStrength = 2; s.visualizer = .scrolling; s.tintBars = true
+s.haptics = true; s.hapticStrength = 2;
 ScrollMonitor.shared.markRunningForDocs()
 s.muteAtEdges = true; s.clickOnMomentum = true; s.clickWithoutInfo = false
 
@@ -53,7 +53,7 @@ do {
 }
 
 // Settings window, one image per tab.
-let tabs = ["sound", "behavior", "haptics", "visualizer"]
+let tabs = ["sound", "behavior", "haptics"]
 let (sw, shost) = show(SettingsView(), size: NSSize(width: 480, height: 480), title: "Scrollo Settings", chrome: true)
 for (i, name) in tabs.enumerated() {
     SettingsNav.shared.tab = i

@@ -185,15 +185,6 @@ struct SettingsView: View {
             }
             .tabItem { Label("Haptics", systemImage: "hand.tap") }.tag(2)
 
-            Form {
-                Picker("Equalizer", selection: $settings.visualizer) {
-                    ForEach(VisualizerMode.allCases) { Text($0.rawValue).tag($0) }
-                }
-                Toggle("Tint bars with sound color", isOn: $settings.tintBars)
-                Text("Bars appear beside the notch (top centre on Macs without one).")
-                    .font(.caption).foregroundStyle(.secondary)
-            }
-            .tabItem { Label("Visualizer", systemImage: "waveform") }.tag(3)
         }
         .formStyle(.grouped)
         .tint(mint)

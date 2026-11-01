@@ -1,11 +1,6 @@
 import Foundation
 import ServiceManagement
 
-enum VisualizerMode: String, CaseIterable, Identifiable {
-    case off = "Off", scrolling = "While scrolling", always = "Always"
-    var id: String { rawValue }
-}
-
 final class Settings: ObservableObject {
     static let shared = Settings()
     private let d = UserDefaults.standard
@@ -20,8 +15,6 @@ final class Settings: ObservableObject {
     @Published var outputUID: String { didSet { d.set(outputUID, forKey: "outputUID") } }
     @Published var haptics: Bool { didSet { d.set(haptics, forKey: "haptics") } }
     @Published var hapticStrength: Int { didSet { d.set(hapticStrength, forKey: "hapticStrength") } }
-    @Published var visualizer: VisualizerMode { didSet { d.set(visualizer.rawValue, forKey: "visualizer") } }
-    @Published var tintBars: Bool { didSet { d.set(tintBars, forKey: "tintBars") } }
     var debugEdge = true   // logs edge-detection verdicts to ~/Library/Logs/Scrollo.log
     /// Also click in apps that report no scroll position (their edges can't be detected there).
     @Published var clickWithoutInfo: Bool { didSet { d.set(clickWithoutInfo, forKey: "clickWithoutInfo") } }
@@ -32,8 +25,8 @@ final class Settings: ObservableObject {
         d.register(defaults: [
             "enabled": true, "volume": 0.6, "soundID": "softpop", "spacing": 120.0,
             "muteAtEdges": true, "clickOnMomentum": true, "outputUID": "",
-            "haptics": false, "hapticStrength": 2, "visualizer": VisualizerMode.scrolling.rawValue,
-            "tintBars": false, "clickWithoutInfo": false,
+            "haptics": false, "hapticStrength": 2,
+            "clickWithoutInfo": false,
         ])
         enabled = d.bool(forKey: "enabled")
         volume = d.double(forKey: "volume")
@@ -45,8 +38,6 @@ final class Settings: ObservableObject {
         outputUID = d.string(forKey: "outputUID") ?? ""
         haptics = d.bool(forKey: "haptics")
         hapticStrength = d.integer(forKey: "hapticStrength")
-        visualizer = VisualizerMode(rawValue: d.string(forKey: "visualizer") ?? "") ?? .scrolling
-        tintBars = d.bool(forKey: "tintBars")
         clickWithoutInfo = d.bool(forKey: "clickWithoutInfo")
         launchAtLogin = SMAppService.mainApp.status == .enabled
     }

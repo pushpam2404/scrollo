@@ -144,7 +144,6 @@ final class ScrollMonitor: ObservableObject {
                 lastClick = now
                 AudioPlayer.shared.play()
                 Haptics.tap()
-                Visualizer.shared.pulse()
             }
         }
     }
