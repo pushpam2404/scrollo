@@ -50,7 +50,6 @@ rm /tmp/key.pem /tmp/cert.pem /tmp/id.p12 /tmp/cs.cnf
 | `Sources/ScrollProbe.swift` | Scroll position reading and the click/silence verdict ([how it works](HOW_IT_WORKS.md)) |
 | `Sources/AudioPlayer.swift`, `SoundBank.swift` | Audio engine and the bundled sounds |
 | `Sources/Haptics.swift` | Trackpad haptics |
-| `Sources/Visualizer.swift` | Notch equalizer |
 | `Sources/Settings.swift`, `Views.swift`, `main.swift` | Preferences, UI, app lifecycle |
 | `Sources/Diagnostics.swift` | Developer test tool (below) |
 | `Tools/render_docs.swift` | Renders the real UI for the docs |
@@ -75,7 +74,7 @@ Turn it off again with `defaults delete com.pushpam.scrollo debugProbe`.
 
 ```sh
 ./scripts/render-docs.sh      # screenshots from the real SwiftUI views (needs a GUI session)
-./scripts/render-banners.sh   # hero, social card, visualizer (needs Chrome, Brave, Chromium or Edge)
+./scripts/render-banners.sh   # hero and social card (rendered with WebKit; no browser needed)
 ```
 
 The icon is drawn in code:

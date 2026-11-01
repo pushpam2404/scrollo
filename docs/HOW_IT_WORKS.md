@@ -11,7 +11,7 @@ flowchart LR
     D --> E{Scroll position<br/>available?}
     E -- no --> S1[Silent<br/>by default]
     E -- yes --> F{Moving, and not<br/>at an edge?}
-    F -- yes --> G[Click + haptic + equalizer]
+    F -- yes --> G[Click + haptic]
     F -- no --> S2[Silent]
 ```
 
@@ -72,10 +72,6 @@ Also silent: the empty desktop (detected from the window list, which needs no pe
 ## 4. Haptics (`Haptics.swift`)
 
 Five levels (Whisper, Light, Medium, Firm, Heavy) are produced with the trackpad's actuator through Apple's private `MultitouchSupport` framework, loaded dynamically and checked symbol by symbol. If anything is missing it falls back to the public `NSHapticFeedbackManager` (which offers only three patterns).
-
-## 5. Visualizer (`Visualizer.swift`)
-
-A click-through panel beside the notch (top-centre on Macs without one) draws five bars driven by the click rate. It is taken off screen entirely when idle and never shown when the menu bar is hidden (full-screen apps), so it cannot pin the menu bar open.
 
 ## Limitations
 

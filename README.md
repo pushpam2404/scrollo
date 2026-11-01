@@ -23,7 +23,7 @@
 
 ## Why Scrollo
 
-Scrolling on a Mac is silent and weightless. Scrollo gives it a physical feel: a soft click as the pointer crosses each notch, a matching tap from the Taptic Engine, and a small equalizer that lights up beside the notch while you scroll.
+Scrolling on a Mac is silent and weightless. Scrollo gives it a physical feel: a soft click as the pointer crosses each notch and a matching tap from the Taptic Engine.
 
 It is also **careful about when it clicks**. Most scroll-sound tools fire on every finger movement. Scrollo asks the app under your pointer whether the content is actually moving, so it stays quiet at the top or bottom of a page, while rubber-banding, and over windows with nothing to scroll.
 
@@ -35,7 +35,6 @@ It is also **careful about when it clicks**. Most scroll-sound tools fire on eve
 | 🛑 **Edge-aware** | Silent at the top and bottom of a page, during rubber-banding, and over the empty desktop. Learned per app, no hard-coded lists. |
 | 🫳 **Trackpad haptics** | Five distinct strengths, from Whisper to Heavy, on Force Touch trackpads. |
 | 🎚️ **Fully adjustable** | Volume, click spacing from 50 to 500 px, momentum scrolling on or off, per-device output (it falls back to the system default if a device disconnects). |
-| 🌊 **Notch equalizer** | A liquid equalizer beside the notch, off, only while scrolling, or always on. Plain white or tinted with your sound's color. |
 | ⚡ **Light on the system** | Idles at about 0% CPU. The audio engine pauses when you are not scrolling and wakes on demand. |
 | 🔒 **Private by design** | No network access, no analytics, nothing recorded. See [Privacy](#privacy). |
 
@@ -49,17 +48,12 @@ It is also **careful about when it clicks**. Most scroll-sound tools fire on eve
 
 <br>
 
-<div align="center">
-<img src="docs/images/visualizer.png" alt="The notch equalizer" width="100%">
-</div>
-
 <details>
 <summary><b>More settings screens</b></summary>
 <br>
 <div align="center">
 <img src="docs/images/settings-sound.png" alt="Sound settings" width="380">
 <img src="docs/images/settings-haptics.png" alt="Haptics settings" width="380">
-<img src="docs/images/settings-visualizer.png" alt="Visualizer settings" width="380">
 </div>
 </details>
 
@@ -98,7 +92,7 @@ It starts working immediately, with no relaunch. Look for the scroll-wheel icon 
 
 ## Using Scrollo
 
-Click the menu bar icon for the quick panel: master switch, **Volume**, **Haptics** (the leftmost position is off), **Click spacing**, and the ten sounds. Click a sound to hear it. **Settings…** has the rest: output device, momentum scrolling, launch at login, and the equalizer.
+Click the menu bar icon for the quick panel: master switch, **Volume**, **Haptics** (the leftmost position is off), **Click spacing**, and the ten sounds. Click a sound to hear it. **Settings…** has the rest: output device, momentum scrolling and launch at login.
 
 ## Where it clicks
 
@@ -162,7 +156,6 @@ Sources/      The app (Swift, SwiftUI + AppKit)
   AudioPlayer.swift     low-latency audio engine, output device handling
   SoundBank.swift       the ten bundled sounds
   Haptics.swift         five-level trackpad taps
-  Visualizer.swift      the notch equalizer
   Settings.swift, Views.swift, main.swift
 Resources/Sounds/       CC0 click sounds + credits
 icon/                   app icon generator

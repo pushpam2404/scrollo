@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="t d">
   <title id="t">How Scrollo decides when to click</title>
-  <desc id="d">Scroll events are read by a listen-only event tap. A scroll probe asks the app under the pointer for its scroll position through Accessibility. If the content is moving, the audio engine, haptics and visualizer fire; at an edge or in a non-scrolling area they stay silent.</desc>
+  <desc id="d">Scroll events are read by a listen-only event tap. A scroll probe asks the app under the pointer for its scroll position through Accessibility. If the content is moving, the audio engine and haptics fire; at an edge or in a non-scrolling area they stay silent.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101716"/><stop offset="1" stop-color="#080b0a"/></linearGradient>
     <linearGradient id="box" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c2624"/><stop offset="1" stop-color="#121a18"/></linearGradient>
@@ -32,7 +32,7 @@
   <text x="715" y="286" class="tag" text-anchor="middle">ACCESSIBILITY API</text>
 
   <rect class="b" x="906" y="130" width="246" height="86" rx="16"/>
-  <text x="1029" y="168" class="h" text-anchor="middle">Click</text><text x="1029" y="194" class="s" text-anchor="middle">sound + haptic + equalizer</text>
+  <text x="1029" y="168" class="h" text-anchor="middle">Click</text><text x="1029" y="194" class="s" text-anchor="middle">sound + haptic</text>
   <rect class="b" x="906" y="236" width="246" height="86" rx="16" style="opacity:.8"/>
   <text x="1029" y="274" class="h" text-anchor="middle">Silence</text><text x="1029" y="300" class="s" text-anchor="middle">edge, rubber-band, nothing to scroll</text>
 
