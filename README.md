@@ -29,7 +29,7 @@ It is also **careful about when it clicks**. Most scroll-sound tools fire on eve
 
 ## Features
 
-| | |
+| Feature | What it does |
 |---|---|
 | 🔊 **Ten click sounds** | Real recordings (wood, water, bubbles, thocks), trimmed and level-matched. Each click is pitch-varied slightly so fast scrolling never sounds machine-gunned. |
 | 🛑 **Edge-aware** | Silent at the top and bottom of a page, during rubber-banding, and over the empty desktop. Learned per app, no hard-coded lists. |
@@ -104,7 +104,7 @@ Click the menu bar icon for the quick panel: master switch, **Volume**, **Haptic
 
 Scrollo can only judge an app that reports its scroll position, so behavior depends on the app:
 
-| | Apps | Behavior |
+| Group | Apps | Behavior |
 |---|---|---|
 | ✅ **Full edge detection** | Preview, TextEdit, Finder, Terminal, Microsoft Word. Most native Mac apps with scroll bars are expected to behave the same. | Clicks while the content moves; silent at edges and when nothing scrolls. |
 | 🔇 **Silent by default** | Browsers (Brave, Chrome, Edge, Arc, ...) and web-based apps (for example Spotify and WhatsApp). | They do not report where the page is, so Scrollo cannot tell when you reach the end. Rather than click at the wrong times, it stays quiet. |
