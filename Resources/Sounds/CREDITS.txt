@@ -1,0 +1,12 @@
+Click sounds are CC0 1.0 (public domain) recordings from Freesound (https://freesound.org),
+trimmed, faded and level-matched for Scrollo. Credit is not required; listed with thanks:
+  bloop      "Single Water Drop"            paespedro        #174718
+  cavedrip   "Water Drop 01"                LilMati          #348022
+  thock      "Thump 5"                      jameswrowles     #380643
+  woodclick  "Videogame Menu BUTTON CLICK"  Christopherderp #342200
+  woodtick   "Wooden Click"                 BenjaminNelan    #321083
+  softpop    "Simple Pop Sound Effect"      SplendidJams     #570459
+  bubble     "Bubble_Pop"                   arttim           #733264
+  gumpop     "Bubble Pop"                   Mafon2           #253956
+  softclick  "Soft UI Button Click"         Freesound        #528561
+  bigpop     "The Best Bubble Pop Sound"    el_boss          #669918
