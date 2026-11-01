@@ -1,0 +1,34 @@
+# Build output
+build/
+dist/
+DerivedData/
+*.dSYM/
+*.o
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.xcuserstate
+xcuserdata/
+*.swp
+
+# Local-only files
+*.log
+*.probe
+*.p12
+*.pem
+*.key
+.env
+.env.*
+scratch/
+ref/
+
+# Claude Code / local tooling
+.claude/
+.codegraph/
