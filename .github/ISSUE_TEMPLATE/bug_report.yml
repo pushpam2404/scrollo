@@ -1,0 +1,37 @@
+name: Bug report
+description: Something does not work the way it should
+labels: [bug]
+body:
+  - type: input
+    id: app
+    attributes:
+      label: App where it happens
+      description: Behavior depends on the app being scrolled (for example Preview, Word, Finder).
+    validations: { required: true }
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+    validations: { required: true }
+  - type: input
+    id: version
+    attributes:
+      label: Scrollo version
+      placeholder: "1.0.0"
+    validations: { required: true }
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version and Mac model
+      placeholder: "macOS 15.1, MacBook Air M2"
+    validations: { required: true }
+  - type: dropdown
+    id: natural
+    attributes:
+      label: Natural scrolling
+      options: ["On", "Off", "Not sure"]
+  - type: textarea
+    id: log
+    attributes:
+      label: Log (last lines of ~/Library/Logs/Scrollo.log)
+      render: text
